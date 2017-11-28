@@ -11,7 +11,7 @@
     <!--公共样式-->
     <link rel="stylesheet" href="css/base.css">
     <!--index 样式-->
-    <link rel="stylesheet" href="css/categroy.css">
+    <link rel="stylesheet" href="css/productlist.css">
     <!--引入less.js-->
     <script src="lib/less/less.js"></script>
 
@@ -39,37 +39,45 @@
         </form>
     </section>
     <!--搜索 B-->
-
-
-    <!--category B-->
-    <section id="categroy_title">
-        <ul class="category_ul">
+    <!--nav B-->
+    <nav id="nav">
+        <span><a href="./index.html">首页</a></span>
+        <span><a href="./category.html">全部分类</a></span>
+        <span class="productName"><a href="#"></a></span>
+        <a href="#">筛选</a>
+    </nav>
+    <!--nav E-->
+    <!--productlist B-->
+    <section id="productlist">
+        <ul>
             <li>
-                <a href="#">大 家 电</a>
-                <ul class="clearfix">
-                    <!--<li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>-->
-                </ul>
-            </li>
-            <li>
-                <a href="#">大 家 电</a>
-                <ul class="clearfix">
-                    <!--<li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>
-                    <li><a href="#">电视</a></li>-->
-                </ul>
+                <a href="#"></a>
+                <div class="pic">
+                    <img src="http://pro.zuyushop.com:8015/ProPic/20166/Thumb/Thumb_2016060015515937123.png" alt="">
+                </div>
+                <div class="text">
+                    <h5>乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视</h5>
+                    <p class="price">￥1999</p>
+                    <div class="other">
+                        <span>报价（6）</span>
+                        <span>评论</span>
+                    </div>
+                </div>
             </li>
         </ul>
+        <div class="page">
+            <span class="previous"><a href="#">上一页</a></span>
+            <span>
+                <select name="" id="select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </span>
+            <span class="next"><a href="#">下一页</a></span>
+        </div>
     </section>
-    <!--category E-->
-
+    <!--productlist E-->
 
     <!--底部 B-->
     <footer id="footer">
@@ -103,24 +111,41 @@
 
     </footer>
     <!--底部 E-->
-    <!--categoryTtileTpl B-->
-    <script type="text/html" id="categoryTtileTpl">
-        {{each result as value index}}
-        <li>
-            <a data_title_id={{value.titleId}} href="#">{{value.title}}</a>
-            <ul class="clearfix">
-            </ul>
-        </li>
-        {{/each}}
+
+
+    <!--productlistTpl B-->
+    <script type="text/html" id="productlistTpl">
+      {{each result as value index}}
+       <li>
+                <a href="#"></a>
+                <div class="pic">
+                    {{#value.productImg}}
+                </div>
+                <div class="text">
+                    <h5>{{value.productName}}</h5>
+                    <p class="price">{{value.productPrice}}</p>
+                    <div class="other">
+                        <span>{{value.productQuote}}</span>
+                        <span>{{value.productCom}}</span>
+                    </div>
+                </div>
+            </li>
+
+
+
+
+
+
+      {{/each}}
+
+
+
+
     </script>
-    <!--categoryTtileTpl E-->
-    <!--categoryMenuTpl B-->
-    <script type="text/html" id="categoryMenuTpl">
-        {{each result as value index}}
-        <li><a href="./productlist.html?categoryid={{value.categoryId}}&pageid=1">{{value.category}}</a></li>
-        {{/each}}
-    </script>
-    <!--categoryMenuTpl E-->
+
+
+    <!--productlistTpl E-->
+
     <!--引入jQuery-->
     <script src="lib/jquery/jquery.js"></script>
     <!--引入bootstrap-->
@@ -130,7 +155,7 @@
     <!--template-->
     <script src="js/template.js"></script>
     <!--引入自己的js-->
-    <script src="js/category.js"></script>
+    <script src="js/productlist.js"></script>
 </body>
 
 </html>
